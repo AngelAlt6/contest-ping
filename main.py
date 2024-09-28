@@ -28,4 +28,4 @@ while True:
     if current_time.endswith(':29'):
         send_message("Ping: <@&1289531604666155051> battle royale contest is happening soon!")
     # Wait for the next minute
-    time.sleep(10)
+    time.sleep(60)
