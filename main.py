@@ -23,11 +23,11 @@ while True:
     
     # Send message at xx:00, xx:15, xx:45
     if current_time.endswith(':00') or current_time.endswith(':15') or current_time.endswith(':45'):
-        send_message("Ping: Team Contest is happening!")
+        send_message("Ping: <@&1289531502350041190> team contest is happening soon!")
     
     # Send message at xx:30
     if current_time.endswith(':30'):
-        send_message("Ping: Battle Royale Contest is happening!")
+        send_message("Ping: <@&1289531604666155051> battle royale contest is happening soon!")
     
     # Wait for the next minute
     time.sleep(60)
