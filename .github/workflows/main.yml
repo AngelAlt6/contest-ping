@@ -2,8 +2,12 @@ name: Discord Ping
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Run every minute
+    - cron: '*/5 * * * *'  # Run every 5 minutes
   workflow_dispatch:  # Allows manual triggering
+
+concurrency:
+  group: discord-ping  # A unique group name to limit concurrency
+  cancel-in-progress: true  # Cancels any currently running workflow before starting a new one
 
 jobs:
   send_ping:
