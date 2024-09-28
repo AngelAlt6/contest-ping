@@ -1,12 +1,16 @@
+import os
 import requests
 import time
 from datetime import datetime
 
-# Discord Webhook URL
-WEBHOOK_URL = 'YOUR_DISCORD_WEBHOOK_URL'
+# Get the Discord Webhook URL from environment variable
+WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK_URL')
 
-# Function to send message to Discord
+# Function to send a message to Discord
 def send_message(content):
+    if WEBHOOK_URL is None:
+        print("Discord Webhook URL is not set")
+        return
     data = {"content": content}
     response = requests.post(WEBHOOK_URL, json=data)
     if response.status_code != 204:
